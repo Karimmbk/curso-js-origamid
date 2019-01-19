@@ -142,3 +142,142 @@
 // }
 
 // ---------------0307--------------------------
+// const imgs = document.querySelectorAll('img');
+
+// function imgSrc(event) {
+//   const src = event.currentTarget.getAttribute('src');
+//   console.log(src);
+// }
+
+// imgs.forEach((img) => {
+//   img.addEventListener('click', imgSrc);
+// });
+
+// Quando o usuário clicar nos links internos do site,
+// adicione a classe ativo ao item clicado e remova dos
+// demais itens caso eles possuam a mesma. Previna
+// o comportamento padrão desses links
+// const links = document.querySelectorAll('a[href^="#"]');
+
+// function handleAtive(event) {
+//   event.preventDefault();
+//   links.forEach((link) => {
+//     link.classList.remove('ativo');
+//   });
+//   event.currentTarget.classList.add('ativo');
+// }
+
+// links.forEach((link) => {
+//   link.addEventListener('click', handleAtive);
+// });
+
+// Selecione todos os elementos do site começando a partir do body,
+// ao clique mostre exatamente quais elementos estão sendo clicados
+
+// const allElements = document.querySelectorAll('body *');
+
+// function handleClick(event) {
+//   console.log(event.currentTarget);
+// }
+
+// allElements.forEach((element) => {
+//   element.addEventListener('click', handleClick);
+// });
+
+// Utilizando o código anterior, ao invés de mostrar no console,
+// remova o elemento que está sendo clicado, o método remove() remove um elemento
+// function handleClick2(event) {
+//   event.currentTarget.remove();
+// }
+
+// allElements.forEach((element) => {
+//   element.addEventListener('click', handleClick2);
+// });
+
+// Se o usuário clicar na tecla (t), aumente todo o texto do site.
+
+// function handleClickT(event) {
+//   if (event.key === 't') {
+// document.documentElement.classList.toggle('textomaior');
+//   }
+// }
+
+// window.addEventListener('keydown', handleClickT);
+
+// // ---------------0308--------------------------
+// // const cont = document.querySelector('.contato');
+// // const titulo = cont.querySelector('.titulo');
+// // const test = document.createElement('h1');
+// // test.innerText = 'test';
+// // test.classList.add('titulo');
+
+// // cont.replaceChild(test, titulo);
+// // // console.log(test);
+
+// // const h1 = document.querySelector('h1').cloneNode(true);
+// // console.log(h1);
+
+// // Duplique o menu e adicione ele em copy
+// const menuCopy = document.querySelector('.menu').cloneNode(true);
+// const copy = document.querySelector('.copy');
+// // console.log(copy);
+// // console.log(menuCopy);
+
+// copy.appendChild(menuCopy);
+// // Selecione o primeiro DT da dl de Faq
+// const firstDt = document.querySelector('.faq-lista dt:first-child');
+
+// // Selecione o DD referente ao primeiro DT
+// const nextElement = firstDt.nextElementSibling;
+// console.log(nextElement);
+
+// // Substitua o conteúdo html de .faq pelo de .animais
+// const animais = document.querySelector('.animais');
+// const faq = document.querySelector('.faq');
+
+// faq.innerHTML = animais.innerHTML;
+
+// // ---------------0309--------------------------
+function initTabNav() {
+  const tabMenu = document.querySelectorAll('.js-tabmenu li');
+  const tabContent = document.querySelectorAll('.js-tabcontent section');
+
+  function activeTab(index) {
+    tabContent.forEach((element) => {
+      element.classList.remove('ativo');
+    });
+    tabContent[index].classList.add('ativo');
+  }
+
+  if (tabMenu.length && tabContent.length) {
+    tabContent[0].classList.add('ativo');
+    tabMenu.forEach((img, index) => {
+      img.addEventListener('click', () => {
+        activeTab(index);
+      });
+    });
+  }
+}
+
+initTabNav();
+// ---------------0310--------------------------
+function initAccordion() {
+  const accordionList = document.querySelectorAll('.js-accordion dt');
+  const activeClass = 'show';
+  function showOnClick() {
+    this.classList.toggle(activeClass);
+    this.nextElementSibling.classList.toggle(activeClass);
+  }
+
+  if (accordionList.length) {
+    accordionList[0].classList.add(activeClass);
+    accordionList[0].nextElementSibling.classList.add(activeClass);
+
+    accordionList.forEach((element) => {
+      element.addEventListener('click', showOnClick);
+    });
+  }
+}
+initAccordion();
+
+// ---------------0311--------------------------

@@ -9,6 +9,9 @@
       href="https://fonts.googleapis.com/css?family=Playfair+Display+SC"
       rel="stylesheet"
     />
+    <script>
+      document.documentElement.className += " js";
+    </script>
     <title>Animais Fantásticos</title>
   </head>
   <body>
@@ -24,7 +27,7 @@
     <!-- section animais -->
     <section class="grid-section animais" id="animais">
       <h1 class="titulo">Animais Fantásticos</h1>
-      <ul class="animais-lista">
+      <ul class="animais-lista js-tabmenu">
         <li><img src="img/content/imagem1.jpg" /></li>
         <li><img src="img/content/imagem2.jpg" /></li>
         <li><img src="img/content/imagem3.jpg" /></li>
@@ -33,13 +36,12 @@
         <li><img src="img/content/imagem6.jpg" /></li>
       </ul>
 
-      <div class="animais-descricao">
+      <div class="animais-descricao js-tabcontent">
         <section>
           <h2>Raposa</h2>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor
-            exercitationem enim illo vero nemo recusandae quod ipsa, velit
-            delectus quae aspernatur, architecto corrupti maxime dignissimos?
+            exercitationem enim illo varchitecto corrupti maxime dignissimos?
           </p>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
@@ -147,7 +149,7 @@
     <!-- FAQ -->
     <section class="grid-section faq" id="faq">
       <h1 class="titulo">FAQ</h1>
-      <dl class="faq-lista">
+      <dl class="faq-lista js-accordion">
         <dt>Qual a idade dos animais?</dt>
         <dd>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero ipsa

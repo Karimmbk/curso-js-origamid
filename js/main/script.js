@@ -280,32 +280,56 @@ function initAccordion() {
 }
 initAccordion();
 
-// ---------------0311--------------------------
+// // ---------------0311--------------------------
 
-function initScrollSuave() {
-  const linksInternos = document.querySelectorAll('.js-menu a[href^="#"]');
+// function initScrollSuave() {
+//   const linksInternos = document.querySelectorAll('.js-menu a[href^="#"]');
 
-  function scrollSuave(event) {
-    event.preventDefault();
-    const href = event.currentTarget.getAttribute('href');
-    const sectionTop = document.querySelector(href);
+//   function scrollSuave(event) {
+//     event.preventDefault();
+//     const href = event.currentTarget.getAttribute('href');
+//     const sectionTop = document.querySelector(href);
 
-    sectionTop.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-    });
+//     sectionTop.scrollIntoView({
+//       behavior: 'smooth',
+//       block: 'start',
+//     });
 
-    //   // forma alternativa e mais nova de se fazer
-    //   const topo = sectionTop.offsetTop;
-    //   window.scrollTo({
-    //     top: topo,
-    //     behavior: 'smooth',
-    //   });
-  }
+//     //   // forma alternativa e mais nova de se fazer
+//     //   const topo = sectionTop.offsetTop;
+//     //   window.scrollTo({
+//     //     top: topo,
+//     //     behavior: 'smooth',
+//     //   });
+//   }
 
-  linksInternos.forEach((element) => {
-    element.addEventListener('click', scrollSuave);
-  });
-}
+//   linksInternos.forEach((element) => {
+//     element.addEventListener('click', scrollSuave);
+//   });
+// }
 
-initScrollSuave();
+// initScrollSuave();
+
+// // ---------------0311--------------------------
+// function initScroll() {
+//   const sections = document.querySelectorAll('.js-scroll');
+//   const windowHeight = window.innerHeight * 0.6;
+
+//   function animaScroll() {
+//     sections.forEach((section) => {
+//       const sectionTop = section.getBoundingClientRect().top - windowHeight;
+//       if (sectionTop < 0) {
+//         section.classList.add('ativo');
+//       } else {
+//         section.classList.remove('ativo');
+//       }
+//     });
+//   }
+
+//   if (sections.length) {
+//     animaScroll();
+//     window.addEventListener('scroll', animaScroll);
+//   }
+// }
+
+// initScroll();

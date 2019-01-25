@@ -282,54 +282,130 @@ initAccordion();
 
 // // ---------------0311--------------------------
 
-// function initScrollSuave() {
-//   const linksInternos = document.querySelectorAll('.js-menu a[href^="#"]');
+function initScrollSuave() {
+  const linksInternos = document.querySelectorAll('.js-menu a[href^="#"]');
 
-//   function scrollSuave(event) {
-//     event.preventDefault();
-//     const href = event.currentTarget.getAttribute('href');
-//     const sectionTop = document.querySelector(href);
+  function scrollSuave(event) {
+    event.preventDefault();
+    const href = event.currentTarget.getAttribute('href');
+    const sectionTop = document.querySelector(href);
 
-//     sectionTop.scrollIntoView({
-//       behavior: 'smooth',
-//       block: 'start',
-//     });
+    sectionTop.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
 
-//     //   // forma alternativa e mais nova de se fazer
-//     //   const topo = sectionTop.offsetTop;
-//     //   window.scrollTo({
-//     //     top: topo,
-//     //     behavior: 'smooth',
-//     //   });
-//   }
+    //   // forma alternativa e mais nova de se fazer
+    //   const topo = sectionTop.offsetTop;
+    //   window.scrollTo({
+    //     top: topo,
+    //     behavior: 'smooth',
+    //   });
+  }
 
-//   linksInternos.forEach((element) => {
-//     element.addEventListener('click', scrollSuave);
-//   });
-// }
+  linksInternos.forEach((element) => {
+    element.addEventListener('click', scrollSuave);
+  });
+}
 
-// initScrollSuave();
+initScrollSuave();
 
 // // ---------------0311--------------------------
-// function initScroll() {
-//   const sections = document.querySelectorAll('.js-scroll');
-//   const windowHeight = window.innerHeight * 0.6;
+function initScroll() {
+  const sections = document.querySelectorAll('.js-scroll');
+  const windowHeight = window.innerHeight * 0.7;
 
-//   function animaScroll() {
-//     sections.forEach((section) => {
-//       const sectionTop = section.getBoundingClientRect().top - windowHeight;
-//       if (sectionTop < 0) {
-//         section.classList.add('ativo');
-//       } else {
-//         section.classList.remove('ativo');
-//       }
-//     });
-//   }
+  function animaScroll() {
+    sections.forEach((section) => {
+      const sectionTop = section.getBoundingClientRect().top - windowHeight;
+      if (sectionTop < 0) {
+        section.classList.add('ativo');
+      } else {
+        section.classList.remove('ativo');
+      }
+    });
+  }
 
-//   if (sections.length) {
-//     animaScroll();
-//     window.addEventListener('scroll', animaScroll);
-//   }
+  if (sections.length) {
+    animaScroll();
+    window.addEventListener('scroll', animaScroll);
+  }
+}
+
+initScroll();
+
+// // ---------------0401--------------------------
+
+// Transforme o objeto abaixo em uma Constructor Function
+// function Pessoa(nome, idade) {
+//   this.nome = nome;
+//   this.idade = idade;
+//   // eslint-disable-next-line func-names
+//   this.andar = function () {
+//     console.log(`${nome} andou`);
+//   };
 // }
 
-// initScroll();
+// // Crie 3 pessoas, João - 20 anos,
+// // Maria - 25 anos, Bruno - 15 anos
+// const joao = new Pessoa('João', 20);
+// const maria = new Pessoa('Maria', 25);
+// const bruno = new Pessoa('Bruno', 15);
+
+// Crie uma Constructor Function (Dom) para manipulação
+// de listas de elementos do dom. Deve conter as seguintes
+// propriedades e métodos:
+//
+// elements, retorna NodeList com os elementos selecionados
+// addClass(classe), adiciona a classe a todos os elementos
+// removeClass(classe), remove a classe a todos os elementos
+
+// function Dom(seletor) {
+//   const elementList = document.querySelectorAll(seletor);
+//   this.elements = elementList;
+//   console.log(elementList);
+//   this.addClass = function addClass(classe) {
+//     elementList.forEach((element) => {
+//       element.classList.add(classe);
+//     });
+//   };
+//   this.removeClass = function removeClass(classe) {
+//     elementList.forEach((element) => {
+//       element.classList.remove(classe);
+//     });
+//   };
+// }
+
+// const test = new Dom('li');
+
+// ---------------0402--------------------------
+// Crie uma função construtora de Pessoas
+// Deve conter nome, sobrenome e idade
+// Crie um método no protótipo que retorne
+// o nome completo da pessoa
+// function Pessoa(nome, sobrenome, idade) {
+//   this.nome = nome;
+//   this.sobrenome = sobrenome;
+//   this.idade = idade;
+// }
+
+// Pessoa.prototype.nomeCompleto = function nomeCompleto() {
+//   return `${this.nome} ${this.sobrenome}`;
+// };
+// Liste os métodos acessados por
+// dados criados com NodeList,
+// HTMLCollection, Document
+
+// // Liste os construtores dos dados abaixo
+// const li = document.querySelector('li');
+
+// li;
+// li.click;
+// li.innerText;
+// li.value;
+// li.hidden;
+// li.offsetLeft;
+// li.click();
+
+// // Qual o construtor do dado abaixo:
+// li.hidden.constructor.name;

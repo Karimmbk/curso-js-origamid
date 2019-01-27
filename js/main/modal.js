@@ -27,12 +27,10 @@ function initModal() {
   }
 
   function escContainerModal(event) {
-    const test = containerModal.className.split(' ');
-    test.forEach((element) => {
-      if (element === 'ativo' && event.key === 'Escape') {
-        fecharModal(event);
-      }
-    });
+    const modalAtivo = containerModal.classList.contains('ativo');
+    if (modalAtivo && event.key === 'Escape') {
+      fecharModal(event);
+    }
   }
 
   // verificando se as variaveis sao verdadeiras para chamar as funcoes

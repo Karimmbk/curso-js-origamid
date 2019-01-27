@@ -1,16 +1,19 @@
 // // ---------------0310--------------------------
 // function initAccordion() {
-//   const accordionList = document.querySelectorAll('.js-accordion dt');
-//   accordionList[0].classList.add('show');
-//   accordionList[0].nextElementSibling.classList.add('show');
-
+//   const accordionList = document.querySelectorAll('[data-anime="accordion"] dt');
+//   const activeClass = 'show';
 //   function showOnClick() {
-//     this.classList.toggle('show');
-//     this.nextElementSibling.classList.toggle('show');
+//     this.classList.toggle(activeClass);
+//     this.nextElementSibling.classList.toggle(activeClass);
 //   }
 
-//   accordionList.forEach((element) => {
-//     element.addEventListener('click', showOnClick);
-//   });
+//   if (accordionList.length) {
+//     accordionList[0].classList.add(activeClass);
+//     accordionList[0].nextElementSibling.classList.add(activeClass);
+
+//     accordionList.forEach((element) => {
+//       element.addEventListener('click', showOnClick);
+//     });
+//   }
 // }
 // initAccordion();

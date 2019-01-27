@@ -1,7 +1,7 @@
-// // ---------------0311--------------------------
+// // // ---------------0311--------------------------
 // function initScroll() {
-//   const sections = document.querySelectorAll('.js-scroll');
-//   const windowHeight = window.innerHeight * 0.6;
+//   const sections = document.querySelectorAll('[data-anime="scroll"]');
+//   const windowHeight = window.innerHeight * 0.7;
 
 //   function animaScroll() {
 //     sections.forEach((section) => {

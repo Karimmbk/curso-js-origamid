@@ -409,3 +409,189 @@ initScroll();
 
 // // Qual o construtor do dado abaixo:
 // li.hidden.constructor.name;
+
+// // ---------------0404--------------------------
+
+// const list = ['R$90', 'R$99', 'R$1200'];
+
+// list.forEach((element) => {
+//   console.log(element.padStart(6, '.'));
+// });
+
+// Utilizando o foreach na array abaixo,
+// some os valores de Taxa e os valores de Recebimento
+
+// const transacoes = [
+//   {
+//     descricao: 'Taxa do Pão',
+//     valor: 'R$ 39',
+//   },
+//   {
+//     descricao: 'Taxa do Mercado',
+//     valor: 'R$ 129',
+//   },
+//   {
+//     descricao: 'Recebimento de Cliente',
+//     valor: 'R$ 99',
+//   },
+//   {
+//     descricao: 'Taxa do Banco',
+//     valor: 'R$ 129',
+//   },
+//   {
+//     descricao: 'Recebimento de Cliente',
+//     valor: 'R$ 49',
+//   },
+// ];
+// let totalTaxa = 0;
+// let totalRecebimento = 0;
+// let i = 0;
+// for (i = 0; i < transacoes.length; i += 1) {
+//   if (transacoes[i].descricao.includes('Taxa')) {
+// eslint-disable-next-line max-len
+//     totalTaxa += +transacoes[i].valor.slice(3); // obs: se eu tiver uma string so com numero e colocar o + na frente ele vira numero.
+//   } else if (transacoes[i].descricao.includes('Recebimento')) {
+//     totalRecebimento += parseFloat(transacoes[i].valor.slice(3));
+//   }
+// }
+
+// console.log(`total de Taxa = R$${totalTaxa}`);
+// console.log(`total de Recebimento = R$${totalRecebimento}`);
+
+// // Retorne uma array com a lista abaixo
+// const transportes = 'Carro;Avião;Trem;Ônibus;Bicicleta';
+
+// const arrayTransportes = transportes.split(';');
+
+// console.log(arrayTransportes);
+
+// Substitua todos os span's por a's
+// const html = `<ul>
+//                 <li><span>Sobre</span></li>
+//                 <li><span>Produtos</span></li>
+//                 <li><span>Contato</span></li>
+//               </ul>`;
+
+// const newHtml = html.replace(/[span]+/g, 'a');
+// console.log(newHtml);
+
+// const newHtml2 = html.split('span').join('a');
+// console.log(newHtml2);
+
+// // Retorne o último caracter da frase
+// const frase = 'Melhor do ano!';
+// console.log(frase.slice(-1));
+// console.log(frase.charAt(frase.length - 1));
+
+// // Retorne o total de taxas
+// const transacoes = [
+//   'Taxa do Banco',
+//   '   TAXA DO PÃO',
+//   '  taxa do mercado',
+//   'depósito Bancário',
+//   'TARIFA especial',
+// ];
+
+// let cont = 0;
+// for (let i = 0; i < transacoes.length; i += 1) {
+//   if (transacoes[i].toLowerCase().includes('taxa')) {
+//     cont += 1;
+//   }
+// }
+
+// console.log(cont);
+
+// ---------------0405--------------------------
+// // Retorne um número aleatório
+// // entre 1050 e 2000
+// console.log(Math.random() * (2000 - 1050 + 1) + 1500);
+
+// // // Retorne o maior número da lista abaixo
+// let numeros = '4, 5, 20, 8, 9';
+// numeros = numeros.split(', ');
+// console.log(Math.max(...numeros));
+
+// // // Crie uma função para limpar os preços
+// // // e retornar os números com centavos arredondados
+// // // depois retorne a soma total
+// // const listaPrecos = ['R$ 59,99', ' R$ 100,222',
+// //                      'R$ 230  ', 'r$  200'];
+
+// ---------------0406--------------------------
+// const comidas = ['Pizza', 'Frango', 'Carne', 'Macarrão'];
+// // Remova o primeiro valor de comidas e coloque em uma variável
+// // Remova o último valor de comidas e coloque em uma variável
+// // Adicione 'Arroz' ao final da array
+// // Adicione 'Peixe' e 'Batata' ao início da array
+// const first = comidas.shift();
+// const last = comidas.pop();
+// comidas.push('Arroz');
+// comidas.unshift('Peixe', 'Batata');
+
+// const estudantes = ['Marcio', 'Brenda', 'Joana', 'Kleber', 'Julia'];
+// // Arrume os estudantes em ordem alfabética
+// // Inverta a ordem dos estudantes
+// // Verifique se Joana faz parte dos estudantes
+// // Verifique se Juliana faz parte dos estudantes
+// estudantes.sort();
+// estudantes.reverse();
+// estudantes.includes('Joana');
+// estudantes.includes('Juliana');
+
+// let html = `<section>
+//               <div>Sobre</div>
+//               <div>Produtos</div>
+//               <div>Contato</div>
+//             </section>`;
+// // Substitua section por ul e div com li,
+// // utilizando split e join
+// html = html.split('section').join('ul');
+// html = html.split('div').join('li');
+// // console.log(html);
+
+// const carros = ['Ford', 'Fiat', 'VW', 'Honda'];
+// // Remova o último carro, mas antes de remover
+// // salve a array original em outra variável
+
+// const aux = carros.slice();
+// carros.pop();
+
+// // ---------------0407--------------------------
+
+// const list = [1, 2, 30, 4, 5, 6];
+
+// const max = list.reduce((aux, item) => (aux > item ? aux : item));
+// console.log(max);
+
+// ---------------0408--------------------------
+// // Retorne a soma total de caracteres dos
+// // parágrafos acima utilizando reduce
+// const parag = document.querySelectorAll('p');
+// console.log(parag);
+
+// const total = Array.prototype.reduce.call(parag, (aux, item) => aux + item.innerText.length, 0);
+// console.log(total);
+
+// // Crie uma função que retorne novos elementos
+// // html, com os seguintes parâmetros
+// // tag, classe e conteudo.
+// function elementHtml(tag, classe, conteudo) {
+//   const element = document.createElement(tag);
+//   // eslint-disable-next-line no-unused-expressions
+//   classe ? element.classList.add(classe) : '';
+//   // eslint-disable-next-line no-unused-expressions
+//   conteudo ? (element.innerHTML = conteudo) : '';
+//   return element;
+// }
+
+// console.log(elementHtml('body', 'ativo', 'teste'));
+
+// // Crie uma nova função utilizando a anterior como base
+// // essa nova função deverá sempre criar h1 com a
+// // classe titulo. Porém o parâmetro conteudo continuará dinâmico
+
+// const elementH1 = elementHtml.bind(null, 'h1', 'titulo');
+
+// console.log(elementH1('teste'));
+
+// // ---------------0501--------------------------

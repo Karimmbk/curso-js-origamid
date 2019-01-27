@@ -26,11 +26,21 @@ function initModal() {
     }
   }
 
+  function escContainerModal(event) {
+    const test = containerModal.className.split(' ');
+    test.forEach((element) => {
+      if (element === 'ativo' && event.key === 'Escape') {
+        fecharModal(event);
+      }
+    });
+  }
+
   // verificando se as variaveis sao verdadeiras para chamar as funcoes
   if (botaoAbrir && botaoFechar && containerModal) {
     botaoAbrir.addEventListener('click', abrirModal);
     botaoFechar.addEventListener('click', fecharModal);
     containerModal.addEventListener('click', fecharContainerModal);
+    window.addEventListener('keyup', escContainerModal);
   }
 }
 

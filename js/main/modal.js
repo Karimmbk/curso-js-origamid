@@ -25,7 +25,7 @@ function initModal() {
       fecharModal(event);
     }
   }
-
+  // funcao caso aperte a tecla esc tire o modal tb
   function escContainerModal(event) {
     const modalAtivo = containerModal.classList.contains('ativo');
     if (modalAtivo && event.key === 'Escape') {

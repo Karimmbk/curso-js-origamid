@@ -4,7 +4,7 @@ function initModal() {
   const botaoFechar = document.querySelector('[data-modal="fechar"');
   const containerModal = document.querySelector('[data-modal="container"]');
 
-  // funcao para abrir o modal quando clicado no botao login
+  // funcao para abrir/fechar o modal quando clicado no botao login
   function toogleModal(event) {
     event.preventDefault();
     containerModal.classList.toggle('ativo');

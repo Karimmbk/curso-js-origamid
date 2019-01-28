@@ -5,9 +5,11 @@ function initDropdownMenu() {
   const dropdownMenus = document.querySelectorAll('[data-dropdown]');
 
   function handleCkick(event) {
-    event.preventDefault();
+    if (event.target === this.children[0]) {
+      event.preventDefault();
+    }
     // ativo a classe no menu
-    this.classList.add('active');
+    this.classList.toggle('active');
     // chamo a funcao q esta em outro arquivo (outsideclick.js)
     // manda como parametro o menu e uma funcao de callback
     // eslint-disable-next-line no-undef

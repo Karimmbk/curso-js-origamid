@@ -23,7 +23,9 @@ function outsideClick(element, events, callback) {
     element.setAttribute(outside, '');
     // e chama a funcao para executar as verificacoes
     events.forEach((userEvent) => {
-      html.addEventListener(userEvent, handleOutsideClick);
+      setTimeout(() => {
+        html.addEventListener(userEvent, handleOutsideClick);
+      });
     });
   }
 }
